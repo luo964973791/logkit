@@ -1,4 +1,8 @@
 ```javascript
+mkdir -p /data/logkit && cd /data/logkit
+wget https://pandora-dl.qiniu.com/logkit_centos_v1.5.5.tar.gz
+tar zxvf logkit_centos_v1.5.5.tar.gz && mv _package package
+
 cat <<EOF | sudo tee /lib/systemd/system/logkit.service
 [Unit]
 Description=Logkit Daemon
@@ -32,4 +36,7 @@ TimeoutStartSec=900
 [Install]
 WantedBy=multi-user.target
 EOF
+
+
+systemctl start logkit
 ```
