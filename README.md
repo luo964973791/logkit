@@ -1,3 +1,4 @@
+```javascript
 cat <<EOF | sudo tee /lib/systemd/system/logkit.service
 [Unit]
 Description=Logkit Daemon
@@ -31,3 +32,4 @@ TimeoutStartSec=900
 [Install]
 WantedBy=multi-user.target
 EOF
+```
